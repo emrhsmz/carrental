@@ -1,0 +1,8 @@
+- create todo extension
+    - componentler oluşturulacak
+    - models oluşturulacak
+    - services oluşturuacak
+    - guard oluşturulacak
+    - pipe oluşturulacak
+    - homepage için tasarım bulunacak
+  - publish extension @done
