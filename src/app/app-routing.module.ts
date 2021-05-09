@@ -13,6 +13,12 @@ import { MainDashboardComponent } from './components/pages/admin-dashboard-page/
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import {AreaEditFormComponent} from './components/pages/admin-dashboard-page/areas-dashboard/area-edit-form/area-edit-form.component';
 import {AreaAddFormComponent} from './components/pages/admin-dashboard-page/areas-dashboard/area-add-form/area-add-form.component';
+import { BrandsDashboardComponent } from './components/pages/admin-dashboard-page/brands-dashboard/brands-dashboard.component';
+import { BrandAddFormComponent } from './components/pages/admin-dashboard-page/brands-dashboard/brand-add-form/brand-add-form.component';
+import { BrandEditFormComponent } from './components/pages/admin-dashboard-page/brands-dashboard/brand-edit-form/brand-edit-form.component';
+import { ModelDashboardComponent } from './components/pages/admin-dashboard-page/model-dashboard/model-dashboard.component';
+import { ModelAddFormComponent } from './components/pages/admin-dashboard-page/model-dashboard/model-add-form/model-add-form.component';
+import { ModelEditFormComponent } from './components/pages/admin-dashboard-page/model-dashboard/model-edit-form/model-edit-form.component';
 
 const routes: Routes = [
   { path: '',  pathMatch:'full', component: AdminDashboardPageComponent },
@@ -31,6 +37,12 @@ const routes: Routes = [
       { path: 'areas', component: AreasDashboardComponent },
       { path: 'areas/add', component: AreaAddFormComponent },
       { path: 'areas/edit/:id', component: AreaEditFormComponent },
+      { path: 'brands', component: BrandsDashboardComponent },
+      { path: 'brands/add', component: BrandAddFormComponent },
+      { path: 'brands/edit/:id', component: BrandEditFormComponent },
+      { path: 'models', component: ModelDashboardComponent },
+      { path: 'models/add', component: ModelAddFormComponent },
+      { path: 'models/edit/:id', component: ModelEditFormComponent },
       { path: 'customergroup', component: CustomerGroupDashboardComponent },
     ],
   },

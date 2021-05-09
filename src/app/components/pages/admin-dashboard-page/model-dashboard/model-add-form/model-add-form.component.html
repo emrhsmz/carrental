@@ -7,7 +7,7 @@
         </div>
         <!-- /.col -->
         <div class="col-sm-3">
-          <button routerLink="/admin/areas" class="btn btn-danger btn-block">Geri</button>
+          <button routerLink="/admin/models" class="btn btn-danger btn-block">Geri</button>
           <ol class="breadcrumb float-sm-right"></ol>
         </div>
         <!-- /.col -->
@@ -30,32 +30,28 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form [formGroup]="areaEditForm">
+            <form [formGroup]="modelAddForm">
               <div class="card-body">
                 <div class="form-group">
-                  <label for="name">Bölge Adı</label>
-                  <input formControlName="name" type="text" class="form-control" id="name" placeholder="Şehir Adı" />
+                    <label>Marka</label>
+                    <select class="form-control" id="brandSelect" aria-label="Floating label select " formControlName="brandId">
+                      <option selected [ngValue]="null">Marka Seçiniz.</option>
+                      <option *ngFor="let brand of brands" value="{{ brand.id}}">{{ brand.name }}</option>
+                    </select>
+                  </div>
+                <div class="form-group">
+                  <label for="name">Model</label>
+                  <input formControlName="name" type="text" class="form-control" id="name" placeholder="Model" />
                 </div>
                 <div class="form-group">
                   <label for="name">Kod</label>
                   <input formControlName="code" type="text" class="form-control" id="code" placeholder="Kod" />
-                </div>
-                <div class="form-group">
-                  <label for="name">Kısa Adı</label>
-                  <input formControlName="smallName" type="text" class="form-control" id="smallName" placeholder="Kısa Adı" />
-                </div>
-                <div class="form-group">
-                  <label>Şehir</label>
-                  <select class="form-control" id="citySelect" aria-label="Floating label select " formControlName="cityId">
-                    <option selected [ngValue]="null">Şehir Seçiniz.</option>
-                    <option *ngFor="let city of cities" value="{{ city.id}}">{{ city.name }}</option>
-                  </select>
-                </div>
+                </div>                
                 <!-- /.form-group -->
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button (click)="update()" class="btn btn-primary">Kaydet</button>
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
               </div>
             </form>
           </div>
@@ -64,4 +60,10 @@
       </div>
     </div>
   </section>
+  <script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+    })
+  </script>
   

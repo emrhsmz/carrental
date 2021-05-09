@@ -59,8 +59,8 @@ export class AreaService {
     );
   }
 
-  getCityById(id: number): Observable<SingleResponseModel<City>>{
-    return this.httpClient.get<SingleResponseModel<City>>
+  getCityById(id: number): Observable<SingleResponseModel<Area>>{
+    return this.httpClient.get<SingleResponseModel<Area>>
     (
       `${this.apiControllerUrl}/getbyid?id=${id}`
     );

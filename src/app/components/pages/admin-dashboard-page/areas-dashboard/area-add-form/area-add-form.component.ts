@@ -20,7 +20,7 @@ export class AreaAddFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastrSerice: ToastrService,
+    private toastrService: ToastrService,
     private router: Router,
     private cityService: CityService,
     private areaService: AreaService
@@ -28,6 +28,7 @@ export class AreaAddFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.createAreaForm();
+    this.getCities();
   }
 
   // tslint:disable-next-line:typedef
@@ -40,9 +41,33 @@ export class AreaAddFormComponent implements OnInit {
     });
   }
 
+  getCities() {
+    this.cityService.get().subscribe((c) => {
+      this.cities = c.data;
+    });
+  }
+
   // tslint:disable-next-line:typedef
   add(){
-
+    //console.log(this.cityAddForm)
+    if(this.areaAddForm.valid){
+      let areaModel = Object.assign({},this.areaAddForm.value);
+      this.areaService.add(areaModel).subscribe(response=>{
+        this.toastrService.success(response.message,"Başarılı!");
+        this.router.navigate(['admin', 'areas']);
+      },responseError=>{
+        if(responseError.error.ValidationErrors.length > 0){
+          console.log(responseError.error.ValidationErrors)
+          for (let i = 0; i < responseError.error.ValidationErrors.length; i++) {
+            this.toastrService.error(responseError.error.ValidationErrors[i].ErrorMessage,"Doğrulama Hatası!");
+          }
+        }
+        return;
+      }
+      )
+    }else{
+      this.toastrService.error("Bölge Bilgisi eklenemedi.","Hata!");
+    }
   }
 
 }

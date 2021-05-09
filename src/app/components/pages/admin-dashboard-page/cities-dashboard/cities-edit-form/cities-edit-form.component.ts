@@ -10,19 +10,22 @@ import { CountryService } from 'src/app/services/country.service';
 @Component({
   selector: 'app-cities-edit-form',
   templateUrl: './cities-edit-form.component.html',
-  styleUrls: ['./cities-edit-form.component.css']
+  styleUrls: ['./cities-edit-form.component.css'],
 })
 export class CitiesEditFormComponent implements OnInit {
-
   title = 'Şehir';
   city!: City;
   cityEditForm!: FormGroup;
   countries: Country[] = [];
 
-  constructor(private formBuilder: FormBuilder,
-              private toastrService: ToastrService, private cityService: CityService,
-              private countryService: CountryService, private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastrService: ToastrService,
+    private cityService: CityService,
+    private countryService: CountryService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getCityIdFromParam();
@@ -40,26 +43,29 @@ export class CitiesEditFormComponent implements OnInit {
   // tslint:disable-next-line:typedef
   getCityIdFromParam() {
     this.activatedRoute.params.subscribe((params) => {
-      if (params.id) { this.getCityById(params.id); }
+      if (params.id) {
+        this.getCityById(params.id);
+      }
     });
   }
 
   // tslint:disable-next-line:typedef
   getCountries() {
-    this.countryService.get()
+    this.countryService
+      .get()
       .subscribe((response) => (this.countries = response.data));
   }
 
   // tslint:disable-next-line:typedef
-  getCityById(id: number){
+  getCityById(id: number) {
     this.cityService.getCityById(id).subscribe((response) => {
       this.city = response.data;
       this.createCityForm();
-    } );
+    });
   }
 
   // tslint:disable-next-line:typedef
-  update(){
+  update() {
     if (!this.cityEditForm.valid) {
       this.toastrService.warning('There are missing fields.');
       return;
@@ -73,8 +79,5 @@ export class CitiesEditFormComponent implements OnInit {
   }
 
   // tslint:disable-next-line:typedef
-  delete(){
-
-  }
-
+  delete() {}
 }
