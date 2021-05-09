@@ -2,10 +2,12 @@
     - componentler oluşturulacak
     - - countries componentleri crud @done
     - - cities componentleri crud @done
+    - - cities componentleri crud
     - models oluşturulacak
     - - countries modeli @done
     - - cities modeli  @done
-    - services oluşturuacak
+    - - areas modeli
+    - services oluşturulacak
     - - countries service @done
     - - cities service @done
     - guard oluşturulacak
