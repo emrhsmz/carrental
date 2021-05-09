@@ -13,20 +13,21 @@ export class CitiesDashboardComponent implements OnInit {
 
   cities: City[] = [];
   cityDetails: CityDetail[] = [];
-  dataLoaded: boolean = false;
-  
-  constructor(private cityService:CityService) { }
-  title ="Şehirler"
+  dataLoaded = false;
+
+  constructor(private cityService: CityService) { }
+  title = 'Şehirler';
   ngOnInit(): void {
     this.get();
     this.getCityDetails();
   }
 
+  // tslint:disable-next-line:typedef
   get(){
     this.cityService.get().subscribe(response => {
-      this.cities = response.data
-      this.dataLoaded= true;
-    })
+      this.cities = response.data;
+      this.dataLoaded = true;
+    });
   }
   getCityDetails() {
     this.cityService.getCityDetails().subscribe((response) => {

@@ -44,7 +44,7 @@ export class CityService {
 
   getCountryDetailsByCountryId(countryId: number): Observable<ListResponseModel<CityDetail>> {
     return this.httpClient.get<ListResponseModel<CityDetail>>(
-      `${this.apiControllerUrl}//api/cities/getdetailbycountryId?countryId=${countryId}`
+      `${this.apiControllerUrl}/api/cities/getdetailbycountryId?countryId=${countryId}`
     );
   }
 

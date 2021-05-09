@@ -27,6 +27,8 @@ import { CountryEditFormComponent } from './components/pages/admin-dashboard-pag
 import { CitiesAddFormComponent } from './components/pages/admin-dashboard-page/cities-dashboard/cities-add-form/cities-add-form.component';
 import { CitiesEditFormComponent } from './components/pages/admin-dashboard-page/cities-dashboard/cities-edit-form/cities-edit-form.component';
 import { FilterCountryPipe } from './pipes/filter-country.pipe';
+import { AreaAddFormComponent } from './components/pages/admin-dashboard-page/areas-dashboard/area-add-form/area-add-form.component';
+import { AreaEditFormComponent } from './components/pages/admin-dashboard-page/areas-dashboard/area-edit-form/area-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { FilterCountryPipe } from './pipes/filter-country.pipe';
     CountryEditFormComponent,
     CitiesAddFormComponent,
     CitiesEditFormComponent,
-    FilterCountryPipe
+    FilterCountryPipe,
+    AreaAddFormComponent,
+    AreaEditFormComponent
   ],
   imports: [
     BrowserModule,

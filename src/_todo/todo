@@ -6,10 +6,11 @@
     - models oluşturulacak
     - - countries modeli @done
     - - cities modeli  @done
-    - - areas modeli
+    - - areas model @done
     - services oluşturulacak
     - - countries service @done
     - - cities service @done
+    - - areas service @done
     - guard oluşturulacak
     - pipe oluşturulacak
     - - filter-country pipe oluşturulacak

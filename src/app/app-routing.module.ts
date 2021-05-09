@@ -11,6 +11,8 @@ import { CountryEditFormComponent } from './components/pages/admin-dashboard-pag
 import { CustomerGroupDashboardComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-dashboard.component';
 import { MainDashboardComponent } from './components/pages/admin-dashboard-page/main-dashboard/main-dashboard.component';
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
+import {AreaEditFormComponent} from './components/pages/admin-dashboard-page/areas-dashboard/area-edit-form/area-edit-form.component';
+import {AreaAddFormComponent} from './components/pages/admin-dashboard-page/areas-dashboard/area-add-form/area-add-form.component';
 
 const routes: Routes = [
   { path: '',  pathMatch:'full', component: AdminDashboardPageComponent },
@@ -27,6 +29,8 @@ const routes: Routes = [
       { path: 'cities/add', component: CitiesAddFormComponent },
       { path: 'cities/edit/:id', component: CitiesEditFormComponent },
       { path: 'areas', component: AreasDashboardComponent },
+      { path: 'areas/add', component: AreaAddFormComponent },
+      { path: 'areas/edit/:id', component: AreaEditFormComponent },
       { path: 'customergroup', component: CustomerGroupDashboardComponent },
     ],
   },
