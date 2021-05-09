@@ -13,25 +13,27 @@ import { MainDashboardComponent } from './components/pages/admin-dashboard-page/
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 
 const routes: Routes = [
-  {path:"",pathMatch:"full",component:HomepageComponent},
+  { path: '', pathMatch: 'full', component: HomepageComponent },
 
-  {path:"admin",component:AdminDashboardPageComponent,
-    children:[
-      {path:"",component:MainDashboardComponent},
-      {path:"countries",component:CountriesDashboardComponent},
-      {path:"countries/add",component:CountryAddFormComponent},
-      {path:"countries/edit:id",component:CountryEditFormComponent},
-      {path:"cities",component:CitiesDashboardComponent},
-      {path:"cities/add",component:CitiesAddFormComponent},
-      {path:"cities/edit:id",component:CitiesEditFormComponent},
-      {path:"areas",component:AreasDashboardComponent},
-      {path:"customergroup",component:CustomerGroupDashboardComponent}
-    ]
+  {
+    path: 'admin',
+    component: AdminDashboardPageComponent,
+    children: [
+      { path: '', component: MainDashboardComponent },
+      { path: 'countries', component: CountriesDashboardComponent },
+      { path: 'countries/add', component: CountryAddFormComponent },
+      { path: 'countries/edit/:id', component: CountryEditFormComponent },
+      { path: 'cities', component: CitiesDashboardComponent },
+      { path: 'cities/add', component: CitiesAddFormComponent },
+      { path: 'cities/edit/:id', component: CitiesEditFormComponent },
+      { path: 'areas', component: AreasDashboardComponent },
+      { path: 'customergroup', component: CustomerGroupDashboardComponent },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

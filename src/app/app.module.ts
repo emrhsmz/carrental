@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { AdminDashboardPageComponent } from './components/pages/admin-dashboard-page/admin-dashboard-page.component';
 import { CountriesDashboardComponent } from './components/pages/admin-dashboard-page/countries-dashboard/countries-dashboard.component';
 import { CitiesDashboardComponent } from './components/pages/admin-dashboard-page/cities-dashboard/cities-dashboard.component';
@@ -25,6 +26,7 @@ import { CountryAddFormComponent } from './components/pages/admin-dashboard-page
 import { CountryEditFormComponent } from './components/pages/admin-dashboard-page/countries-dashboard/country-edit-form/country-edit-form.component';
 import { CitiesAddFormComponent } from './components/pages/admin-dashboard-page/cities-dashboard/cities-add-form/cities-add-form.component';
 import { CitiesEditFormComponent } from './components/pages/admin-dashboard-page/cities-dashboard/cities-edit-form/cities-edit-form.component';
+import { FilterCountryPipe } from './pipes/filter-country.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { CitiesEditFormComponent } from './components/pages/admin-dashboard-page
     CountryAddFormComponent,
     CountryEditFormComponent,
     CitiesAddFormComponent,
-    CitiesEditFormComponent
+    CitiesEditFormComponent,
+    FilterCountryPipe
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,7 @@ import { CitiesEditFormComponent } from './components/pages/admin-dashboard-page
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass:'toast-bottom-right',
+      positionClass:"toast-top-right"
     })
   ],
   providers: [],

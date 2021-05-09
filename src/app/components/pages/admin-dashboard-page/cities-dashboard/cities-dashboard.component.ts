@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { City } from 'src/app/models/city';
+import { CityDetail } from 'src/app/models/cityDetail';
+import { ListResponseModel } from 'src/app/models/listResponseModel';
+import { CityService } from 'src/app/services/city.service';
 
 @Component({
   selector: 'app-cities-dashboard',
@@ -7,9 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitiesDashboardComponent implements OnInit {
 
-  constructor() { }
-
+  cities: City[] = [];
+  cityDetails: CityDetail[] = [];
+  dataLoaded: boolean = false;
+  
+  constructor(private cityService:CityService) { }
+  title ="Şehirler"
   ngOnInit(): void {
+    this.get();
+    this.getCityDetails();
   }
 
+  get(){
+    this.cityService.get().subscribe(response => {
+      this.cities = response.data
+      this.dataLoaded= true;
+    })
+  }
+  getCityDetails() {
+    this.cityService.getCityDetails().subscribe((response) => {
+      this.cityDetails = response.data;
+      this.dataLoaded = true;
+    });
+  }
+
+  getCountryDetailsByCountryId(countryId: number) {
+    this.cityService.getCountryDetailsByCountryId(countryId).subscribe((response) => {
+      this.cityDetails = response.data;
+      this.dataLoaded = true;
+    });
+  }
 }
