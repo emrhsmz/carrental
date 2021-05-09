@@ -29,6 +29,7 @@ export class CitiesDashboardComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
+  // tslint:disable-next-line:typedef
   getCityDetails() {
     this.cityService.getCityDetails().subscribe((response) => {
       this.cityDetails = response.data;
@@ -36,6 +37,7 @@ export class CitiesDashboardComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
   getCountryDetailsByCountryId(countryId: number) {
     this.cityService.getCountryDetailsByCountryId(countryId).subscribe((response) => {
       this.cityDetails = response.data;

@@ -1,1 +1,72 @@
-<p>area-add-form works!</p>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-9">
+        <h1 class="m-0">{{ title }}</h1>
+      </div>
+      <!-- /.col -->
+      <div class="col-sm-3">
+        <button routerLink="/admin/cities" class="btn btn-danger btn-block">Geri</button>
+        <ol class="breadcrumb float-sm-right"></ol>
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">{{ title }} Ekle</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form [formGroup]="areaAddForm">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="name">Bölge Adı</label>
+                <input formControlName="name" type="text" class="form-control" id="name" placeholder="Şehir Adı" />
+              </div>
+              <div class="form-group">
+                <label for="name">Kod</label>
+                <input formControlName="code" type="text" class="form-control" id="code" placeholder="Kod" />
+              </div>
+              <div class="form-group">
+                <label for="name">Kısa Adı</label>
+                <input formControlName="smallName" type="text" class="form-control" id="smallName" placeholder="Kısa Adı" />
+              </div>
+              <div class="form-group">
+                <label>Şehir</label>
+                <select class="form-control" id="citySelect" aria-label="Floating label select " formControlName="cityId">
+                  <option selected [ngValue]="null">Şehir Seçiniz.</option>
+                  <option *ngFor="let city of cities" value="{{ city.id}}">{{ city.name }}</option>
+                </select>
+              </div>
+              <!-- /.form-group -->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button (click)="add()" class="btn btn-primary">Ekle</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+  })
+</script>

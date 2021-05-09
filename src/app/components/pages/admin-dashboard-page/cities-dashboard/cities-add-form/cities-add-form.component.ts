@@ -25,11 +25,11 @@ export class CitiesAddFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createCarForm();
+    this.createCityForm();
     this.getCountries();
   }
 
-  createCarForm() {
+  createCityForm() {
     this.cityAddForm = this.formBuilder.group({
       name: ['', Validators.required],
       countryId: ['', Validators.required]
@@ -47,7 +47,7 @@ export class CitiesAddFormComponent implements OnInit {
   }
 
   add(){
-    console.log(this.cityAddForm)
+    //console.log(this.cityAddForm)
     if(this.cityAddForm.valid){
       let cityModel = Object.assign({},this.cityAddForm.value);
       this.cityService.add(cityModel).subscribe(response=>{
@@ -62,7 +62,7 @@ export class CitiesAddFormComponent implements OnInit {
         }
         return;
       }
-      )      
+      )
     }else{
       this.toastrService.error("Ürün eklenemedi.","Hata!");
     }
