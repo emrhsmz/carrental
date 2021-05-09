@@ -1,13 +1,13 @@
 - create todo extension
     - componentler oluşturulacak
-    - - countries componentleri ekle-sil-listele oluşturuldu. @done
-    - - cities componentleri ekle-sil-listele 
+    - - countries componentleri crud @done
+    - - cities componentleri crud @done
     - models oluşturulacak
-    - - countries modeli oluşturuldu @done
-    - - cities modeli oluşturuldu @done
+    - - countries modeli @done
+    - - cities modeli  @done
     - services oluşturuacak
-    - - countries servicesi oluşturuldu @done
-    - - cities servicesi 
+    - - countries service @done
+    - - cities service @done
     - guard oluşturulacak
     - pipe oluşturulacak
     - - filter-country pipe oluşturulacak

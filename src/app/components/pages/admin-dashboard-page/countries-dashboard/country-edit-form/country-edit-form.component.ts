@@ -26,19 +26,20 @@ export class CountryEditFormComponent implements OnInit {
   ngOnInit(): void {
     this.getCountryIdFromParam();
   }
-
+// tslint:disable-next-line:typedef
   createCountryForm() {
     this.countryEditForm = this.formBuilder.group({
       name: [this.country.name, Validators.required],
     });
   }
 
+// tslint:disable-next-line:typedef
   getCountryIdFromParam() {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['id']) this.getCountryById(params['id']);
+      if (params.id) { this.getCountryById(params.id); }
     });
   }
-
+// tslint:disable-next-line:typedef
   getCountryById(id: number) {
     this.countryService.getCountryById(id).subscribe((response) => {
       this.country = response.data;
@@ -46,14 +47,14 @@ export class CountryEditFormComponent implements OnInit {
       this.createCountryForm();
     });
   }
-
+// tslint:disable-next-line:typedef
   update() {
     if (!this.countryEditForm.valid) {
       this.toastrService.error('There are missing fields.');
       return;
     }
 
-    let countryModel: Country = {
+    const countryModel: Country = {
       id: this.country.id,
       ...this.countryEditForm.value,
     };
@@ -62,10 +63,10 @@ export class CountryEditFormComponent implements OnInit {
       this.router.navigate(['admin', 'countries']);
     });
   }
-
+// tslint:disable-next-line:typedef
   delete() {
     if (window.confirm('Are you sure delete brand?')) {
-      let countryModel: Country = {
+      const countryModel: Country = {
         id: this.country.id,
         ...this.countryEditForm.value,
       };

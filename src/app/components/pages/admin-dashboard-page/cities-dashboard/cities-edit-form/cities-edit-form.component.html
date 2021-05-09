@@ -26,11 +26,11 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">{{ title }} Ekle</h3>
+              <h3 class="card-title">{{ title }} Düzenle</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form [formGroup]="citiesEditForm">
+            <form [formGroup]="cityEditForm">
               <div class="card-body">
                 <div class="form-group">
                   <label for="name">Şehir Adı</label>
@@ -53,7 +53,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button (click)="update()" class="btn btn-primary">Ekle</button>
+                <button (click)="update()" class="btn btn-primary">Kaydet</button>
               </div>
             </form>
           </div>
@@ -62,9 +62,3 @@
       </div>
     </div>
   </section>
-  <script>
-    $(function () {
-      //Initialize Select2 Elements
-      $('.select2').select2()
-    })
-  </script>

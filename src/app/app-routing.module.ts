@@ -13,7 +13,7 @@ import { MainDashboardComponent } from './components/pages/admin-dashboard-page/
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomepageComponent },
+  { path: '',  pathMatch:'full', component: AdminDashboardPageComponent },
 
   {
     path: 'admin',

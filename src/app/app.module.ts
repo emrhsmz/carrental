@@ -57,7 +57,7 @@ import { FilterCountryPipe } from './pipes/filter-country.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass:"toast-top-right"
+      positionClass: 'toast-top-right'
     })
   ],
   providers: [],
