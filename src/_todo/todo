@@ -5,18 +5,21 @@
     - - area componentleri crud @done
     - - brand componentleri crud @done
     - - model componentleri crud @done
+    - - branch componentleri crud @done
     - models oluşturulacak
     - - countries modeli @done
     - - cities modeli  @done
     - - areas model @done
     - - brand model @done
     - - model model @done
+    - - branch model @done
     - services oluşturulacak
     - - countries service @done
     - - cities service @done
     - - areas service @done
     - - brand service @done
     - - model service @done
+    - - branch service @done
     - guard oluşturulacak
     - pipe oluşturulacak
     - - filter-country pipe oluşturulacak

@@ -14,7 +14,7 @@ import {Area} from '../../../../../models/area';
 })
 export class AreaAddFormComponent implements OnInit {
 
-  title = 'Şehir';
+  title = 'Bölge';
   areaAddForm!: FormGroup;
   cities: City[] = [];
 

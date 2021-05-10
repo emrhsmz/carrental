@@ -11,17 +11,20 @@ import { CountryEditFormComponent } from './components/pages/admin-dashboard-pag
 import { CustomerGroupDashboardComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-dashboard.component';
 import { MainDashboardComponent } from './components/pages/admin-dashboard-page/main-dashboard/main-dashboard.component';
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
-import {AreaEditFormComponent} from './components/pages/admin-dashboard-page/areas-dashboard/area-edit-form/area-edit-form.component';
-import {AreaAddFormComponent} from './components/pages/admin-dashboard-page/areas-dashboard/area-add-form/area-add-form.component';
+import { AreaEditFormComponent } from './components/pages/admin-dashboard-page/areas-dashboard/area-edit-form/area-edit-form.component';
+import { AreaAddFormComponent } from './components/pages/admin-dashboard-page/areas-dashboard/area-add-form/area-add-form.component';
 import { BrandsDashboardComponent } from './components/pages/admin-dashboard-page/brands-dashboard/brands-dashboard.component';
 import { BrandAddFormComponent } from './components/pages/admin-dashboard-page/brands-dashboard/brand-add-form/brand-add-form.component';
 import { BrandEditFormComponent } from './components/pages/admin-dashboard-page/brands-dashboard/brand-edit-form/brand-edit-form.component';
 import { ModelDashboardComponent } from './components/pages/admin-dashboard-page/model-dashboard/model-dashboard.component';
 import { ModelAddFormComponent } from './components/pages/admin-dashboard-page/model-dashboard/model-add-form/model-add-form.component';
 import { ModelEditFormComponent } from './components/pages/admin-dashboard-page/model-dashboard/model-edit-form/model-edit-form.component';
+import { BranchesDashboardComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branches-dashboard.component';
+import { BranchAddFormComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branch-add-form/branch-add-form.component';
+import { BranchEditFormComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branch-edit-form/branch-edit-form.component';
 
 const routes: Routes = [
-  { path: '',  pathMatch:'full', component: AdminDashboardPageComponent },
+  { path: '', pathMatch: 'full', component: AdminDashboardPageComponent },
 
   {
     path: 'admin',
@@ -43,6 +46,9 @@ const routes: Routes = [
       { path: 'models', component: ModelDashboardComponent },
       { path: 'models/add', component: ModelAddFormComponent },
       { path: 'models/edit/:id', component: ModelEditFormComponent },
+      { path: 'branches', component: BranchesDashboardComponent },
+      { path: 'branches/add', component: BranchAddFormComponent },
+      { path: 'branches/edit/:id', component: BranchEditFormComponent },
       { path: 'customergroup', component: CustomerGroupDashboardComponent },
     ],
   },

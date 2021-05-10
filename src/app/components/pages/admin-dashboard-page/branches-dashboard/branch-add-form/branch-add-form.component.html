@@ -1,0 +1,154 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="/admin/branches" class="btn btn-danger btn-block">Geri</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">{{ title }} Ekle</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="branchAddForm">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Lokasyon Adı</label>
+                            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Lokasyon Adı"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Lokasyon Açıklama</label>
+                            <input formControlName="description" type="text" class="form-control" id="description" placeholder="Lokasyon Açıklama"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Ülke</label>
+                            <select class="form-control" id="countrySelect" aria-label="Floating label select " formControlName="countryId">
+                              <option selected [ngValue]="null">Ülke Seçiniz.</option>
+                              <option *ngFor="let country of countries" value="{{ country.id}}">{{ country.name }}</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Şehir</label>
+                            <select class="form-control" id="citySelect" aria-label="Floating label select " formControlName="cityId">
+                              <option selected [ngValue]="null">Şehir Seçiniz.</option>
+                              <option *ngFor="let city of cities" value="{{ city.id}}">{{ city.name }}</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Bölge</label>
+                            <select class="form-control" id="areaSelect" aria-label="Floating label select " formControlName="areaId">
+                              <option selected [ngValue]="null">Bölge Seçiniz.</option>
+                              <option *ngFor="let area of areas" value="{{ area.id}}">{{ area.code }} - {{ area.name }} - {{ area.smallName }}</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Adres</label>
+                            <input formControlName="address" type="text" class="form-control" id="address" placeholder="Adres"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Lokasyon Kodu</label>
+                            <input formControlName="code" type="text" min="0" class="form-control" id="code"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Sıra</label>
+                            <input formControlName="order" type="number" min="0" class="form-control" id="order"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" checked formControlName="isActive" name="isActive" class="form-check-input" id="isActive">
+                                <label class="form-check-label" for="isActive">Aktif</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group"  style="padding-top: 30px;" >
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isPleaseOfPurchase" id="isPleaseOfPurchase" name="isPleaseOfPurchase" checked  class="form-check-input" id="isPlaseOfPurchase">
+                                <label class="form-check-label" for="isPleaseOfPurchase">Alış Lokasyonu</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isBranch" id="isBranch" name="isBranch" checked class="form-check-input" id="isBranch">
+                                <label class="form-check-label" for="isBranch">Şube</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">E-mail</label>
+                            <input formControlName="email" type="text" class="form-control" id="email"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Telefon</label>
+                            <input formControlName="phone" type="text" class="form-control" id="phone"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Koordinat</label>
+                            <input formControlName="coordination" type="text" class="form-control" id="coordination" placeholder="Örn. 38.723401,35.4701871"/>
+                        </div>
+                      </div>
+                  </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+    })
+  </script>
