@@ -10,7 +10,7 @@ import { ModelService } from 'src/app/services/model.service';
 })
 export class ModelDashboardComponent implements OnInit {
 
-  title = 'Bölge';
+  title = 'Model';
   models: Model[] = [];
   modelDetails: ModelDetail[] = [];
   dataLoaded = false;

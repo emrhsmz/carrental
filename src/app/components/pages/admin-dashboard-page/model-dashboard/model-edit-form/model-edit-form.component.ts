@@ -15,7 +15,7 @@ import { ModelService } from 'src/app/services/model.service';
 })
 export class ModelEditFormComponent implements OnInit {
 
-  title = 'Bölge';
+  title = 'Model';
   model!: Model;
   modelEditForm!: FormGroup;
   brands: Brand[] = [];

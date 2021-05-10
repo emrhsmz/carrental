@@ -14,7 +14,7 @@ import { ModelService } from 'src/app/services/model.service';
 export class ModelAddFormComponent implements OnInit {
 
   
-  title = 'Şehir';
+  title = 'Model';
   modelAddForm!: FormGroup;
   brands: Brand[] = [];
 
@@ -50,10 +50,10 @@ export class ModelAddFormComponent implements OnInit {
   add(){
     //console.log(this.cityAddForm)
     if(this.modelAddForm.valid){
-      let brandModel = Object.assign({},this.modelAddForm.value);
-      this.brandService.add(brandModel).subscribe(response=>{
+      let modelModel = Object.assign({},this.modelAddForm.value);
+      this.modelService.add(modelModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı!");
-        this.router.navigate(['admin', 'brands']);
+        this.router.navigate(['admin', 'models']);
       },responseError=>{
         if(responseError.error.ValidationErrors.length > 0){
           console.log(responseError.error.ValidationErrors)
