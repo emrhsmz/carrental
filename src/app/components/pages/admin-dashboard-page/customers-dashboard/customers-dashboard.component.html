@@ -1,0 +1,89 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="add" class="btn btn-success btn-block">Yeni {{ title }} Ekle</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">{{ title }}</h3>
+                  <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+  
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center;">Id</th>
+                        <th style="text-align: center;">Aktif</th>
+                        <th style="text-align: center;">Müşteri Ünvanı</th>
+                        <th style="text-align: center;">Grup</th>
+                        <th style="text-align: center;">Müşteri Tipi</th>
+                        <th style="text-align: center;">Ülke</th>
+                        <th>-</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let customer of customerDetails">
+                        <td align="center">{{customer.id}}</td>
+                        <td align="center"><i *ngIf="customer.isActive == true" class="fa fa-check"></i> <i *ngIf="customer.isActive == false" class="fa fa-times" style="color:darkorange;"></i></td>
+                        <td align="center">{{customer.fullName}}</td>
+                        <td align="center">{{customer.customerGroupName}}</td>
+                        <td align="center">
+                          <span *ngIf="customer.customerType == 1 ">Müşteri</span>
+                          <span *ngIf="customer.customerType == 2 ">Acente</span>
+                          <span *ngIf="customer.customerType == 3 ">Tedarikçi</span>
+                          <span *ngIf="customer.customerType == 4 ">Broker</span>
+                          <span *ngIf="customer.customerType == 5 ">Diğer</span>
+                        </td>
+                        <td align="center">{{customer.countryName}}</td>
+                        <td>
+                          <button routerLink="edit/{{ customer.id }}" class="btn btn-sm btn-primary"> <i class="fas fa-edit" title="Düzenle"></i></button>
+                          &nbsp;
+                          <button routerLink="driver/{{ customer.id }}"  class="btn btn-sm btn-primary"> <i class="fas fa-address-card" title="Sürücü Ekle"></i></button>
+                          &nbsp;
+                          <button routerLink="driver/{{ customer.id }}" class="btn btn-sm btn-primary"> <i class="fas fa-file-alt" title="Belgeler"></i></button>
+                          &nbsp;
+                          <a href="admin/addresses/customerId/{{ customer.id }}" class="btn btn-sm btn-primary"> <i class="fas fa-home" title="Adres Bilgisi"></i></a>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+    </div>
+  </section>

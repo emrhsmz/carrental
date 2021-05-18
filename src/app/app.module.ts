@@ -38,6 +38,12 @@ import { ModelEditFormComponent } from './components/pages/admin-dashboard-page/
 import { BranchesDashboardComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branches-dashboard.component';
 import { BranchAddFormComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branch-add-form/branch-add-form.component';
 import { BranchEditFormComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branch-edit-form/branch-edit-form.component';
+import { CustomerEditFormComponent } from './components/pages/admin-dashboard-page/customers-dashboard/customer-edit-form/customer-edit-form.component';
+import { CustomerAddFormComponent } from './components/pages/admin-dashboard-page/customers-dashboard/customer-add-form/customer-add-form.component';
+import { CustomersDashboardComponent } from './components/pages/admin-dashboard-page/customers-dashboard/customers-dashboard.component';
+import { AddressesDashboardComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/addresses-dashboard.component';
+import { AddressAddFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-add-form/address-add-form.component';
+import { AddressEditFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-edit-form/address-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +75,13 @@ import { BranchEditFormComponent } from './components/pages/admin-dashboard-page
     ModelEditFormComponent,
     BranchesDashboardComponent,
     BranchAddFormComponent,
-    BranchEditFormComponent
+    BranchEditFormComponent,
+    CustomersDashboardComponent,
+    CustomerEditFormComponent,
+    CustomerAddFormComponent,
+    AddressesDashboardComponent,
+    AddressAddFormComponent,
+    AddressEditFormComponent
   ],
   imports: [
     BrowserModule,

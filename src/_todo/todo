@@ -1,27 +1,60 @@
 - create todo extension
-    - componentler oluşturulacak
-    - - countries componentleri crud @done
-    - - cities componentleri crud @done
-    - - area componentleri crud @done
-    - - brand componentleri crud @done
-    - - model componentleri crud @done
-    - - branch componentleri crud @done
-    - models oluşturulacak
+    - Component
+    - - countries crud @done
+    - - cities crud @done
+    - - area crud @done
+    - - brand  crud @done
+    - - model crud @done
+    - - branch crud @done
+    - - customer crud @done
+    - - customergroup crud
+    - - class crud
+    - - classImage crud
+    - - car crud
+    - - document crud
+    - - driver crud
+    - - seri crud
+    - - vat crud
+    - - address crud
+    - - invoice crud
+    - Models
     - - countries modeli @done
     - - cities modeli  @done
-    - - areas model @done
-    - - brand model @done
-    - - model model @done
-    - - branch model @done
-    - services oluşturulacak
-    - - countries service @done
-    - - cities service @done
-    - - areas service @done
-    - - brand service @done
-    - - model service @done
-    - - branch service @done
-    - guard oluşturulacak
-    - pipe oluşturulacak
+    - - areas  @done
+    - - brand  @done
+    - - model @done
+    - - branch  @done
+    - - customer @done
+    - - customergroup
+    - - class
+    - - classImage
+    - - car
+    - - document
+    - - driver
+    - - seri
+    - - vat
+    - - address
+    - - invoice
+    - Services
+    - - countries @done
+    - - cities @done
+    - - areas @done
+    - - brand @done
+    - - model @done
+    - - branch @done
+    - - customer @done
+    - - customergroup
+    - - class
+    - - classImage
+    - - car
+    - - document
+    - - driver
+    - - seri
+    - - vat
+    - - address
+    - - invoice
+    - Guard
+    - Pipes
     - - filter-country pipe oluşturulacak
     - homepage için tasarım bulunacak
   - publish extension @done

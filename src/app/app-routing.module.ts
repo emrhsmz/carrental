@@ -22,6 +22,12 @@ import { ModelEditFormComponent } from './components/pages/admin-dashboard-page/
 import { BranchesDashboardComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branches-dashboard.component';
 import { BranchAddFormComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branch-add-form/branch-add-form.component';
 import { BranchEditFormComponent } from './components/pages/admin-dashboard-page/branches-dashboard/branch-edit-form/branch-edit-form.component';
+import { CustomerAddFormComponent } from './components/pages/admin-dashboard-page/customers-dashboard/customer-add-form/customer-add-form.component';
+import { CustomerEditFormComponent } from './components/pages/admin-dashboard-page/customers-dashboard/customer-edit-form/customer-edit-form.component';
+import { CustomersDashboardComponent } from './components/pages/admin-dashboard-page/customers-dashboard/customers-dashboard.component';
+import { AddressesDashboardComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/addresses-dashboard.component';
+import { AddressAddFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-add-form/address-add-form.component';
+import { AddressEditFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-edit-form/address-edit-form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: AdminDashboardPageComponent },
@@ -49,7 +55,14 @@ const routes: Routes = [
       { path: 'branches', component: BranchesDashboardComponent },
       { path: 'branches/add', component: BranchAddFormComponent },
       { path: 'branches/edit/:id', component: BranchEditFormComponent },
-      { path: 'customergroup', component: CustomerGroupDashboardComponent },
+      { path: 'customers', component: CustomersDashboardComponent },
+      { path: 'customers/add', component: CustomerAddFormComponent },
+      { path: 'customers/edit/:id', component: CustomerEditFormComponent },
+      //{ path: 'addresses', component: AddressesDashboardComponent },
+      { path: 'addresses/customerId/:id', component: AddressesDashboardComponent },
+      { path: 'addresses/add', component: AddressAddFormComponent },
+      { path: 'addresses/edit/:id', component: AddressEditFormComponent },
+      { path: 'customergroups', component: CustomerGroupDashboardComponent },
     ],
   },
 ];

@@ -1,0 +1,221 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="/admin/customers" class="btn btn-danger btn-block">Geri</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">{{ title }} Ekle</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="customerEditForm">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Cari Tipi</label>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" value="0" checked="checked" name="firmType"  formControlName="firmType">
+                              <label class="form-check-label">Bireysel</label>
+                                &nbsp; &nbsp; &nbsp;
+                              <input class="form-check-input" type="radio" value="1" name="firmType" formControlName="firmType">
+                              <label class="form-check-label">Kurumsal</label>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Cari Kodu</label>
+                            <input formControlName="code" type="text" class="form-control" id="code" placeholder="Cari Kodu"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Adı</label>
+                            <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="Ad"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Soyadı</label>
+                            <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Soyad"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad</label>
+                            <input formControlName="fullName" type="text" class="form-control" id="fullName" placeholder="Ad Soyad"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">TC Kimlik Numarası</label>
+                            <input formControlName="tcNumber" type="text" class="form-control" id="tcNumber" placeholder="TC Kimlik Numarası"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Vergi Dairesi</label>
+                            <input formControlName="taxOffice" type="text" class="form-control" id="taxOffice" placeholder="Vergi Dairesi"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Vergi Numarası</label>
+                            <input formControlName="taxNumber" type="text" class="form-control" id="taxNumber" placeholder="Vergi Numarası"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Ülke</label>
+                            <select class="form-control" id="countrySelect" aria-label="Floating label select " formControlName="countryId">
+                              <option selected [ngValue]="null">Ülke Seçiniz.</option>
+                              <option *ngFor="let country of countries" value="{{ country.id}}">{{ country.name }}</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Müşteri Tipi</label>
+                            <select class="form-control" id="customerType" aria-label="Floating label select " formControlName="customerType">
+                              <option value="" selected="selected">Müşteri Tipi Seçiniz</option>
+                              <option value="1">Müşteri</option>
+                              <option value="2">Acente</option>
+                              <option value="3">Tedarikçi</option>
+                              <option value="4">Broker</option>
+                              <option value="5">Diğer</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Müşteri Grubu</label>
+                            <select class="form-control" id="customerGroupId" aria-label="Floating label select " formControlName="customerGroupId">
+                              <option selected [ngValue]="null">Müşteri Grubu Seçiniz.</option>
+                              <option *ngFor="let customerGroup of customerGroups" value="{{ customerGroup.id}}"> {{ customerGroup.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="Telefon"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="phone2">Fax</label>
+                            <input formControlName="phone2" type="text" class="form-control" id="phone2" placeholder="Fax"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Email</label>
+                            <input formControlName="email" type="email" class="form-control" id="email" placeholder="E-Mail Adresi"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Açıklama</label>
+                            <input formControlName="description" type="text" class="form-control" id="description" placeholder="Açıklama"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Oluşturan Şube</label>
+                            <select class="form-control" id="branchId" aria-label="Floating label select " formControlName="branchId">
+                              <option selected [ngValue]="null">Şube Seçiniz.</option>
+                              <option *ngFor="let branch of branches" value="{{ branch.id}}">{{ branch.name }}</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Kaynak</label>
+                            <select class="form-control" id="source" aria-label="Floating label select " formControlName="source">
+                              <option value="" selected="selected">Kaynak Seçiniz</option>
+                              <option value="1">Ofis</option>
+                              <option value="2">Telefon</option>
+                              <option value="3">Web Sitesi</option>
+                              <option value="4">Mobil Uygulama</option>
+                              <option value="5">Web Servis</option>
+                              <option value="6">Acente</option>
+                              <option value="7">E-posta</option>
+                              <option value="8">Mobil Web Sitesi</option>
+                              <option value="9">Kurumsal</option>
+                              <option value="0">Broker</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Kaynak Açıklama</label>
+                            <input formControlName="sourceValue" type="text" min="0" class="form-control" id="sourceValue"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="name">İskonto</label>
+                            <input formControlName="discount" type="number" min="0" class="form-control" id="discount"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" checked formControlName="isActive" name="isActive" class="form-check-input" id="isActive">
+                                <label class="form-check-label" for="isActive">Aktif</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group"  style="padding-top: 30px;" >
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isBlackList" id="isBlackList" name="isPleaseOfPurchase"  class="form-check-input" id="isPlaseOfPurchase">
+                                <label class="form-check-label" for="isBlackList">Kara Liste</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isDeposit" id="isDeposit" name="isDeposit" class="form-check-input" id="isBranch">
+                                <label class="form-check-label" for="isDeposit">Depozito</label>
+                              </div>
+                        </div>
+                      </div>
+                  </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button (click)="update()" class="btn btn-primary">Kaydet</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>
