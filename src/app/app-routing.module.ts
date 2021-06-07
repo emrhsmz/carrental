@@ -33,6 +33,9 @@ import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboa
 import { ClassesDashboardComponent } from './components/pages/admin-dashboard-page/classes-dashboard/classes-dashboard.component';
 import { ClassAddFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-add-form/class-add-form.component';
 import { ClassEditFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-edit-form/class-edit-form.component';
+import { CarDasboardComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-dasboard.component';
+import { CarAddFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-add-form/car-add-form.component';
+import { CarEditFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-edit-form/car-edit-form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: AdminDashboardPageComponent },
@@ -73,6 +76,9 @@ const routes: Routes = [
       { path: 'classes', component: ClassesDashboardComponent },
       { path: 'classes/add', component: ClassAddFormComponent },
       { path: 'classes/edit/:id', component: ClassEditFormComponent },
+      { path: 'cars', component: CarDasboardComponent },
+      { path: 'cars/add', component: CarAddFormComponent },
+      { path: 'cars/edit/:id', component: CarEditFormComponent },
     ],
   },
 ];

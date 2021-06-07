@@ -13,6 +13,8 @@ export class ClassesDashboardComponent implements OnInit {
   classes: Class[] = [];
   classDetails: ClassDetail[] = [];
   dataLoaded = false;
+  order: string = 'order';
+  reverse: boolean = false;
 
   constructor(private classService: ClassService) { }
 

@@ -1,0 +1,118 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="add" class="btn btn-success btn-block">Yeni {{title}} Ekle</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">{{title}}</h3>
+                  <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+  
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-hover text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Aktif</th>
+                        <th>Plaka</th>
+                        <th>Bağlı Şube</th>
+                        <th>Sınıf Kodu</th>
+                        <th>Marka</th>
+                        <th>Model</th>
+                        <th>Seri</th>
+                        <th>Yakıt</th>
+                        <th>Vites</th>
+                        <th>Renk</th>
+                        <th>Kilometre</th>
+                        <th>Maks. Kilometre</th>
+                        <th>-</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let car of carDetails">
+                        <td>{{car.id}}</td>
+                        <td><i *ngIf="car.isActive == true" class="fa fa-check"></i> <i *ngIf="car.isActive == false" class="fa fa-times" style="color:darkorange;"></i></td>
+                        <td>{{car.plaque}}</td>
+                        <td>{{car.branchName}}</td>
+                        <td>{{car.classCode}}</td>
+                        <td>{{car.brandName}}</td>
+                        <td>{{car.modelName}}</td>
+                        <td>{{car.seriName}}</td>
+                        <td>
+                            <span *ngIf="car.fuel == 1 ">Benzin</span>
+                            <span *ngIf="car.fuel == 2 ">Benzin & LPG</span>
+                            <span *ngIf="car.fuel == 3 ">Dizel</span>
+                            <span *ngIf="car.fuel == 4 ">Hybrid (Benzin)</span>
+                            <span *ngIf="car.fuel == 5 ">Hybrid (Dizel)</span>
+                            <span *ngIf="car.fuel == 6 ">Elektrik</span>
+                        </td>
+                        <td>
+                            <span *ngIf="car.gear == 1 ">Manuel</span>
+                            <span *ngIf="car.gear == 2 ">Otomatik</span>
+                            <span *ngIf="car.gear == 3 ">Yarı Otomatik</span>
+                        </td>
+                        <td><span *ngIf="car.color == 1">Bej</span>
+                            <span *ngIf="car.color == 2">Beyaz</span>
+                            <span *ngIf="car.color == 3">Bordo</span>
+                            <span *ngIf="car.color == 4">Bronz</span>
+                            <span *ngIf="car.color == 5">Füme</span>
+                            <span *ngIf="car.color == 6">Gri</span>
+                            <span *ngIf="car.color == 7">Gümüş Gri</span>
+                            <span *ngIf="car.color == 8">Kahverengi</span>
+                            <span *ngIf="car.color == 9">Kırmızı</span>
+                            <span *ngIf="car.color == 10">Lacivert</span>
+                            <span *ngIf="car.color == 11">Mavi</span>
+                            <span *ngIf="car.color == 12">Pembe</span>
+                            <span *ngIf="car.color == 13">Sarı</span>
+                            <span *ngIf="car.color == 14">Siyah</span>
+                            <span *ngIf="car.color == 15">Şampanya</span>
+                            <span *ngIf="car.color == 16">Turkuaz</span>
+                            <span *ngIf="car.color == 17">Turuncu</span>
+                            <span *ngIf="car.color == 18">Yeşil</span></td>
+                        <td>&nbsp;&nbsp; {{car.kilometer}}</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{car.maxKilometer}}</td>
+                        <td>
+                          <button routerLink="edit/{{ car.id }}" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></button></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <!-- /.row -->
+    </div>
+  </section>

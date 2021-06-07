@@ -1,0 +1,25 @@
+export interface Car{
+    id:number;
+    plaque:string;
+    modelYear:number;
+    chasisNumber:string;
+    engineNumber:string;
+    kilometer:number;
+    maxKilometer:number;
+    periodicMaintenanceKilometer:number;
+    description:string;
+    carPrice:number;
+    isActive:boolean;
+    branchOfficeId:number;
+    fleetNumber:number;
+    classId:number;
+    brandId:number;
+    modelId:number;
+    seriId:number;
+    fuel:number;
+    gear:number;
+    body:number;
+    color:number;
+    engineCapacity:number;
+    rateOfEngine:number;
+}

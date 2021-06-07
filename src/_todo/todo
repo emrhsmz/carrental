@@ -10,7 +10,7 @@
     - - customergroup crud @done
     - - class crud @done
     - - classImage crud
-    - - car crud
+    - - car crud @done
     - - document crud
     - - driver crud
     - - seri crud
@@ -28,7 +28,7 @@
     - - customergroup @done
     - - class @done
     - - classImage
-    - - car
+    - - car @done
     - - document
     - - driver
     - - seri
@@ -46,7 +46,7 @@
     - - customergroup @done
     - - class @done
     - - classImage
-    - - car
+    - - car @done
     - - document
     - - driver
     - - seri

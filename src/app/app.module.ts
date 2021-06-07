@@ -49,7 +49,9 @@ import { CustomerGroupAddFormComponent } from './components/pages/admin-dashboar
 import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-edit-form/customer-group-edit-form.component';
 import { ClassAddFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-add-form/class-add-form.component';
 import { ClassEditFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-edit-form/class-edit-form.component';
-import { CountService } from './services/count.service';
+import { CarDasboardComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-dasboard.component';
+import { CarAddFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-add-form/car-add-form.component';
+import { CarEditFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-edit-form/car-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +95,9 @@ import { CountService } from './services/count.service';
     ClassesDashboardComponent,
     ClassAddFormComponent,
     ClassEditFormComponent,
+    CarDasboardComponent,
+    CarAddFormComponent,
+    CarEditFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,7 +110,7 @@ import { CountService } from './services/count.service';
       positionClass: 'toast-top-right'
     })
   ],
-  providers: [CountService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

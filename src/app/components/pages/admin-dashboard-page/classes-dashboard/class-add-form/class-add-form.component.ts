@@ -77,7 +77,7 @@ export class ClassAddFormComponent implements OnInit {
   }
 
   add(){
-    console.log(this.classAddForm)
+    //console.log(this.classAddForm)
     if(this.classAddForm.valid){
       let classModel = Object.assign({},this.classAddForm.value);
       this.classService.add(classModel).subscribe(response=>{

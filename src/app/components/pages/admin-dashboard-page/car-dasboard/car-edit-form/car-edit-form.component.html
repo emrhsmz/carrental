@@ -1,0 +1,296 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="/admin/cars" class="btn btn-danger btn-block">Geri</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">{{ title }} Düzenle</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="carEditForm">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isActive" name="isActive" class="form-check-input" id="isActive">
+                                <label class="form-check-label" for="isActive">Aktif</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Plaka</label>
+                            <input formControlName="plaque" type="text" class="form-control" id="plaque" placeholder="Plaka"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Model Yılı</label>
+                            <input formControlName="modelYear" type="number" min="0" class="form-control" id="modelYear"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Şasi No</label>
+                            <input formControlName="chasisNumber" type="text" class="form-control" id="chasisNumber"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Motor No</label>
+                            <input formControlName="engineNumber" type="text" class="form-control" id="engineNumber"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="name">Araç Satın Alma Bedeli</label>
+                            <input formControlName="carPrice" type="number" min="0" class="form-control" id="carPrice"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="name">Kilometre</label>
+                            <input formControlName="kilometer" type="text" class="form-control" id="kilometer"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="name">Max Kilometre</label>
+                            <input formControlName="maxKilometer" type="text" class="form-control" id="maxKilometer"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Peryodik Bakım KM'si</label>
+                            <select class="form-control" id="periodicMaintenanceKilometer" aria-label="Floating label select " formControlName="periodicMaintenanceKilometer">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">10.000</option>
+                              <option value="2">12.000</option>
+                              <option value="3">15.000</option>
+                              <option value="4">20.000</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Açıklama</label>
+                            <textarea formControlName="description" rows="2" cols="20" class="form-control" id="description"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Filo Tipi</label>
+                            <select class="form-control" id="fleetNumber" aria-label="Floating label select " formControlName="fleetNumber">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">Kısa Dönem</option>
+                              <option value="2">Uzun Dönem</option>
+                              <option value="3">İkinci El</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Bağlı Olduğu Şube</label>
+                            <select class="form-control" id="branchOfficeId" aria-label="Floating label select " formControlName="branchOfficeId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let branch of branches" value="{{ branch.id}}"> {{ branch.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Sınıf</label>
+                            <select class="form-control" id="classId" aria-label="Floating label select " formControlName="classId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let class of classes" value="{{ class.id}}"> {{ class.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Marka</label>
+                            <select class="form-control" id="brandId" aria-label="Floating label select " formControlName="brandId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let brand of brands" value="{{ brand.id}}"> {{ brand.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Model</label>
+                            <select class="form-control" id="modelId" aria-label="Floating label select " formControlName="modelId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let model of models" value="{{ model.id}}"> {{ model.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Seri</label>
+                            <select class="form-control" id="seriId" aria-label="Floating label select " formControlName="seriId">
+                              <!-- <option selected [ngValue]="null">Seri Seçiniz.</option> -->
+                              <option value="0">Deneme</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Yakıt</label>
+                            <select class="form-control" id="fuel" aria-label="Floating label select " formControlName="fuel">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">Benzin</option>
+                              <option value="2">Benzin & LPG</option>
+                              <option value="3">Dizel</option>
+                              <option value="4">Hybrid (Benzin)</option>
+                              <option value="5">Hybrid (Dizel)</option>
+                              <option value="6">Elektrik</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Vites</label>
+                            <select class="form-control" id="gear" aria-label="Floating label select " formControlName="gear">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">Manuel</option>
+                              <option value="2">Otomatik</option>
+                              <option value="3">Yarı Otomatik</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Renk</label>
+                            <select class="form-control" id="color" aria-label="Floating label select " formControlName="color">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">Bej</option>
+                              <option value="2">Beyaz</option>
+                              <option value="3">Bordo</option>
+                              <option value="4">Bronz</option>
+                              <option value="5">Füme</option>
+                              <option value="6">Gri</option>
+                              <option value="7">Gümüş Gri</option>
+                              <option value="8">Kahverengi</option>
+                              <option value="9">Kırmızı</option>
+                              <option value="10">Lacivert</option>
+                              <option value="11">Mavi</option>
+                              <option value="12">Pembe</option>
+                              <option value="13">Sarı</option>
+                              <option value="14">Siyah</option>
+                              <option value="15">Şampanya</option>
+                              <option value="16">Turkuaz</option>
+                              <option value="17">Turuncu</option>
+                              <option value="18">Yeşil</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Kasa</label>
+                            <select class="form-control" id="body" aria-label="Floating label select " formControlName="body">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">Cabrio</option>
+                              <option value="2">Coupe</option>
+                              <option value="3">Hatchback 3 Kapı</option>
+                              <option value="4">Hatchback 5 Kapı</option>
+                              <option value="5">Sedan</option>
+                              <option value="6">Station Wagon</option>
+                              <option value="7">Otobüs</option>
+                              <option value="8">Suv/Jeep</option>
+                              <option value="9">Minübüs</option>
+                              <option value="10">Kamyonet</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Hacim</label>
+                            <select class="form-control" id="engineCapacity" aria-label="Floating label select " formControlName="engineCapacity">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">&lt;1200cc</option>
+                              <option value="2">1201-1400cc</option>
+                              <option value="3">1401-1600cc</option>
+                              <option value="4">1601-1800cc</option>
+                              <option value="5">1801-2000cc</option>
+                              <option value="6">2001-2500cc</option>
+                              <option value="7">2501-3000cc</option>
+                              <option value="8">3001-3500cc</option>
+                              <option value="9">3501-4000cc</option>
+                              <option value="10">4001-4500cc</option>
+                              <option value="11">4501-5000cc</option>
+                              <option value="12">5001-5500cc</option>
+                              <option value="13">5501-6000cc</option>
+                              <option value="14">&gt;6000cc</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Güç</label>
+                            <select class="form-control" id="rateOfEngine" aria-label="Floating label select " formControlName="rateOfEngine">
+                              <option value="" selected="selected">Seçiniz</option>
+                              <option value="1">50 BG'ye kadar</option>
+                              <option value="2">51-75 BG</option>
+                              <option value="3">76-100 BG</option>
+                              <option value="4">101-125 BG</option>
+                              <option value="5">126-150 BG</option>
+                              <option value="6">151-175 BG</option>
+                              <option value="7">176-200 BG</option>
+                              <option value="8">201-225 BG</option>
+                              <option value="9">226-250 BG</option>
+                              <option value="10">251-275 BG</option>
+                              <option value="11">276-300 BG</option>
+                              <option value="12">301-325 BG</option>
+                              <option value="13">326-350 BG</option>
+                              <option value="14">351-375 BG</option>
+                              <option value="15">376-400 BG</option>
+                              <option value="16">401-425 BG</option>
+                              <option value="17">426-450 BG</option>
+                              <option value="18">451-475 BG</option>
+                              <option value="19">476-500 BG</option>
+                              <option value="20">501-525 BG</option>
+                              <option value="21">526-550 BG</option>
+                              <option value="22">551-575 BG</option>
+                              <option value="23">576-600 BG</option>
+                              <option value="24">&gt;600 BG</option>
+                            </select>
+                          </div>
+                      </div>
+                  </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button (click)="update()" class="btn btn-primary">Kaydet</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>
