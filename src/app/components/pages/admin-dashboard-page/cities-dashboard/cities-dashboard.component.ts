@@ -16,6 +16,7 @@ export class CitiesDashboardComponent implements OnInit {
   dataLoaded = false;
 
   constructor(private cityService: CityService) { }
+  
   title = 'Şehirler';
   ngOnInit(): void {
     this.get();

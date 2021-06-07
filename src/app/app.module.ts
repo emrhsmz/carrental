@@ -15,6 +15,7 @@ import { CountriesDashboardComponent } from './components/pages/admin-dashboard-
 import { CitiesDashboardComponent } from './components/pages/admin-dashboard-page/cities-dashboard/cities-dashboard.component';
 import { AreasDashboardComponent } from './components/pages/admin-dashboard-page/areas-dashboard/areas-dashboard.component';
 import { CustomerGroupDashboardComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-dashboard.component';
+import { ClassesDashboardComponent } from './components/pages/admin-dashboard-page/classes-dashboard/classes-dashboard.component';
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import { MainDashboardComponent } from './components/pages/admin-dashboard-page/main-dashboard/main-dashboard.component';
 import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
@@ -46,6 +47,9 @@ import { AddressAddFormComponent } from './components/pages/admin-dashboard-page
 import { AddressEditFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-edit-form/address-edit-form.component';
 import { CustomerGroupAddFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-add-form/customer-group-add-form.component';
 import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-edit-form/customer-group-edit-form.component';
+import { ClassAddFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-add-form/class-add-form.component';
+import { ClassEditFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-edit-form/class-edit-form.component';
+import { CountService } from './services/count.service';
 
 @NgModule({
   declarations: [
@@ -85,7 +89,10 @@ import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboa
     AddressAddFormComponent,
     AddressEditFormComponent,
     CustomerGroupAddFormComponent,
-    CustomerGroupEditFormComponent
+    CustomerGroupEditFormComponent,
+    ClassesDashboardComponent,
+    ClassAddFormComponent,
+    ClassEditFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +105,7 @@ import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboa
       positionClass: 'toast-top-right'
     })
   ],
-  providers: [],
+  providers: [CountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

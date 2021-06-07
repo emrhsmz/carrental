@@ -1,0 +1,287 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="/admin/customers" class="btn btn-danger btn-block">Geri</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">{{ title }} Ekle</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="classAddForm">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Sınıf Adı</label>
+                            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Sınıf Adı"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Sıra</label>
+                            <input formControlName="order" type="number" min="0" class="form-control" id="order"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Sınıf Kodu</label>
+                            <input formControlName="classCode" type="text" class="form-control" id="classCode"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Grup</label>
+                            <select class="form-control" id="group" aria-label="Floating label select " formControlName="group">
+                              <option value="" selected="selected">Grup Seçiniz</option>
+                              <option value="1">Ekonomi</option>
+                              <option value="2">Kompakt</option>
+                              <option value="3">Standart</option>
+                              <option value="4">Orta Sınıf</option>
+                              <option value="5">Üst Sınıf</option>
+                              <option value="6">Lüx</option>
+                              <option value="7">SUV</option>
+                              <option value="8">SUV (4x2)</option>
+                              <option value="9">SUV (4x4)</option>
+                              <option value="10">Minivan</option>
+                              <option value="11">Minübüs</option>
+                              <option value="12">Otobüs</option>
+                              <option value="13">Karavan</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Marka</label>
+                            <select class="form-control" id="brandId" aria-label="Floating label select " formControlName="brandId">
+                              <option selected [ngValue]="null">Marka Seçiniz.</option>
+                              <option *ngFor="let brand of brands" value="{{ brand.id}}"> {{ brand.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Model</label>
+                            <select class="form-control" id="modelId" aria-label="Floating label select " formControlName="modelId">
+                              <option selected [ngValue]="null">Model Seçiniz.</option>
+                              <option *ngFor="let model of models" value="{{ model.id}}"> {{ model.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Seri</label>
+                            <select class="form-control" id="seriId" aria-label="Floating label select " formControlName="seriId">
+                              <!-- <option selected [ngValue]="null">Seri Seçiniz.</option> -->
+                              <option value="0">Deneme</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Yakıt</label>
+                            <select class="form-control" id="fuel" aria-label="Floating label select " formControlName="fuel">
+                              <option value="" selected="selected">Yakıt Seçiniz</option>
+                              <option value="1">Benzin</option>
+                              <option value="2">Benzin & LPG</option>
+                              <option value="3">Dizel</option>
+                              <option value="4">Hybrid (Benzin)</option>
+                              <option value="5">Hybrid (Dizel)</option>
+                              <option value="6">Elektrik</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Vites</label>
+                            <select class="form-control" id="gear" aria-label="Floating label select " formControlName="gear">
+                              <option value="" selected="selected">Vites Seçiniz</option>
+                              <option value="1">Manuel</option>
+                              <option value="2">Otomatik</option>
+                              <option value="3">Yarı Otomatik</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Bagaj</label>
+                            <select class="form-control" id="luggage" aria-label="Floating label select " formControlName="luggage">
+                              <option value="" selected="selected">Bagaj Seçiniz</option>
+                              <option value="1">1 Bagaj</option>
+                              <option value="2">2 Bagaj</option>
+                              <option value="3">3 Bagaj</option>
+                              <option value="4">4 Bagaj</option>
+                              <option value="5">5 Bagaj</option>
+                              <option value="6">6 Bagaj</option>
+                              <option value="7">7 Bagaj</option>
+                              <option value="8">8 Bagaj</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Kasa</label>
+                            <select class="form-control" id="body" aria-label="Floating label select " formControlName="body">
+                              <option value="" selected="selected">Grup Seçiniz</option>
+                              <option value="1">Cabrio</option>
+                              <option value="2">Coupe</option>
+                              <option value="3">Hatchback 3 Kapı</option>
+                              <option value="4">Hatchback 5 Kapı</option>
+                              <option value="5">Sedan</option>
+                              <option value="6">Station Wagon</option>
+                              <option value="7">Otobüs</option>
+                              <option value="8">Suv/Jeep</option>
+                              <option value="9">Minübüs</option>
+                              <option value="10">Kamyonet</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Kişi</label>
+                            <select class="form-control" id="people" aria-label="Floating label select " formControlName="people">
+                              <option value="" selected="selected">Grup Seçiniz</option>
+                              <option value="1">2 Kişi</option>
+                              <option value="2">3 Kişi</option>
+                              <option value="3">4 Kişi</option>
+                              <option value="4">5 Kişi</option>
+                              <option value="5">6 Kişi</option>
+                              <option value="6">7 Kişi</option>
+                              <option value="7">8 Kişi</option>
+                              <option value="8">9 Kişi</option>
+                              <option value="9">10 Kişi</option>
+                              <option value="10">12 Kişi</option>
+                              <option value="11">14 Kişi</option>
+                              <option value="12">15 Kişi</option>
+                              <option value="13">16 Kişi</option>
+                              <option value="14">17 Kişi</option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="name">Min. Sürücü Yaşı</label>
+                            <input formControlName="minLicenseAge" type="number" min="0" class="form-control" id="minLicenseAge"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="name">Min. Ehliyet Yaşı</label>
+                            <input formControlName="minDriverAge" type="number" min="0" class="form-control" id="minDriverAge"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Günlük KM Limiti</label>
+                            <input formControlName="dailyKilometerLimit" type="number" min="0" class="form-control" id="dailyKilometerLimit"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="name">Depozito</label>
+                            <input formControlName="deposit" type="number" min="0" class="form-control" id="deposit"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group" style="padding-top: 40px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isDoubleCreditCart" id="isDoubleCreditCart" name="isDoubleCreditCart" class="form-check-input">
+                                <label class="form-check-label" for="isDoubleCreditCart">Çift Kredi Kartı Zorunlu</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 40px;">
+                            <div class="form-check">
+                                <input type="checkbox" checked formControlName="isActive" name="isActive" class="form-check-input" id="isActive">
+                                <label class="form-check-label" for="isActive">Aktif</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group"  style="padding-top: 40px;" >
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isAirConditioning" id="isAirConditioning" name="isAirConditioning"  class="form-check-input">
+                                <label class="form-check-label" for="isAirConditioning">Klima</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 40px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isNavigation" id="isNavigation" name="isNavigation" class="form-check-input">
+                                <label class="form-check-label" for="isNavigation">Navigasyon</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-1">
+                        <div class="form-group" style="padding-top: 40px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isPopular" id="isPopular" name="isPopular" class="form-check-input">
+                                <label class="form-check-label" for="isPopular">Populer Araç</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="alert alert-info alert-dismissible col-sm-12">
+                          Dahili Hizmetler
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isHgs" id="isHgs" name="isHgs" class="form-check-input">
+                                <label class="form-check-label" for="isHgs">HGS</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isInsurarence" id="isInsurarence" name="isInsurarence" class="form-check-input">
+                                <label class="form-check-label" for="isInsurarence">Kasko (Muafiyetli)</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group" style="padding-top: 30px;">
+                            <div class="form-check">
+                                <input type="checkbox" formControlName="isKdv" id="isKdv" name="isKdv" class="form-check-input">
+                                <label class="form-check-label" for="isKdv">Kdv</label>
+                              </div>
+                        </div>
+                      </div>
+                  </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>

@@ -30,6 +30,9 @@ import { AddressAddFormComponent } from './components/pages/admin-dashboard-page
 import { AddressEditFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-edit-form/address-edit-form.component';
 import { CustomerGroupAddFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-add-form/customer-group-add-form.component';
 import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-edit-form/customer-group-edit-form.component';
+import { ClassesDashboardComponent } from './components/pages/admin-dashboard-page/classes-dashboard/classes-dashboard.component';
+import { ClassAddFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-add-form/class-add-form.component';
+import { ClassEditFormComponent } from './components/pages/admin-dashboard-page/classes-dashboard/class-edit-form/class-edit-form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: AdminDashboardPageComponent },
@@ -67,6 +70,9 @@ const routes: Routes = [
       { path: 'customergroups', component: CustomerGroupDashboardComponent },
       { path: 'customergroups/add', component: CustomerGroupAddFormComponent },
       { path: 'customergroups/edit/:id', component: CustomerGroupEditFormComponent },
+      { path: 'classes', component: ClassesDashboardComponent },
+      { path: 'classes/add', component: ClassAddFormComponent },
+      { path: 'classes/edit/:id', component: ClassEditFormComponent },
     ],
   },
 ];
