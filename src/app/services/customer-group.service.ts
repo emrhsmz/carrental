@@ -49,7 +49,7 @@ export class CustomerGroupService {
     );
   }
 
-  getCustomerById(id: number): Observable<SingleResponseModel<CustomerGroup>>{
+  getCustomerGrupById(id: number): Observable<SingleResponseModel<CustomerGroup>>{
     return this.httpClient.get<SingleResponseModel<CustomerGroup>>
     (
       `${this.apiControllerUrl}/getbyid?id=${id}`

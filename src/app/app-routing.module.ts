@@ -28,6 +28,8 @@ import { CustomersDashboardComponent } from './components/pages/admin-dashboard-
 import { AddressesDashboardComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/addresses-dashboard.component';
 import { AddressAddFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-add-form/address-add-form.component';
 import { AddressEditFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-edit-form/address-edit-form.component';
+import { CustomerGroupAddFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-add-form/customer-group-add-form.component';
+import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-edit-form/customer-group-edit-form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: AdminDashboardPageComponent },
@@ -63,6 +65,8 @@ const routes: Routes = [
       { path: 'addresses/add', component: AddressAddFormComponent },
       { path: 'addresses/edit/:id', component: AddressEditFormComponent },
       { path: 'customergroups', component: CustomerGroupDashboardComponent },
+      { path: 'customergroups/add', component: CustomerGroupAddFormComponent },
+      { path: 'customergroups/edit/:id', component: CustomerGroupEditFormComponent },
     ],
   },
 ];

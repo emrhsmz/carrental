@@ -44,6 +44,8 @@ import { CustomersDashboardComponent } from './components/pages/admin-dashboard-
 import { AddressesDashboardComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/addresses-dashboard.component';
 import { AddressAddFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-add-form/address-add-form.component';
 import { AddressEditFormComponent } from './components/pages/admin-dashboard-page/addresses-dashboard/address-edit-form/address-edit-form.component';
+import { CustomerGroupAddFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-add-form/customer-group-add-form.component';
+import { CustomerGroupEditFormComponent } from './components/pages/admin-dashboard-page/customer-group-dashboard/customer-group-edit-form/customer-group-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,9 @@ import { AddressEditFormComponent } from './components/pages/admin-dashboard-pag
     CustomerAddFormComponent,
     AddressesDashboardComponent,
     AddressAddFormComponent,
-    AddressEditFormComponent
+    AddressEditFormComponent,
+    CustomerGroupAddFormComponent,
+    CustomerGroupEditFormComponent
   ],
   imports: [
     BrowserModule,

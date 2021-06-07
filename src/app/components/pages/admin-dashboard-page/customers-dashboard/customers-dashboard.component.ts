@@ -10,7 +10,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class CustomersDashboardComponent implements OnInit {
 
-  title= "Lokasyon";
+  title= "Müşteri";
   customer: Customer[] = [];
   customerDetails: CustomerDetail[] = [];
   dataLoaded: boolean = false;

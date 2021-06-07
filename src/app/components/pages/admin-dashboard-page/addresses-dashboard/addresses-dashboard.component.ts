@@ -11,7 +11,7 @@ import { AddressService } from 'src/app/services/address.service';
 })
 export class AddressesDashboardComponent implements OnInit {
 
-  title= "Adres";
+  title= "Müşteri Adres";
   addresses: Address[] = [];
   customerAddresses: Address[] = [];
   addressDetails: AddressDetail[] = [];
