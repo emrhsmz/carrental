@@ -36,6 +36,9 @@ import { ClassEditFormComponent } from './components/pages/admin-dashboard-page/
 import { CarDasboardComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-dasboard.component';
 import { CarAddFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-add-form/car-add-form.component';
 import { CarEditFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-edit-form/car-edit-form.component';
+import { ContractsDashboardComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contracts-dashboard.component';
+import { ContractAddFormComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contract-add-form/contract-add-form.component';
+import { ContractEditFormComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contract-edit-form/contract-edit-form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: AdminDashboardPageComponent },
@@ -79,6 +82,9 @@ const routes: Routes = [
       { path: 'cars', component: CarDasboardComponent },
       { path: 'cars/add', component: CarAddFormComponent },
       { path: 'cars/edit/:id', component: CarEditFormComponent },
+      { path: 'contracts', component: ContractsDashboardComponent },
+      { path: 'contracts/add', component: ContractAddFormComponent },
+      { path: 'contracts/edit/:id', component: ContractEditFormComponent },
     ],
   },
 ];

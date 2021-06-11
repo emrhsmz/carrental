@@ -44,6 +44,7 @@
                       <tr>
                         <th>Id</th>
                         <th>Aktif</th>
+                        <th>Durum</th>
                         <th>Plaka</th>
                         <th>Bağlı Şube</th>
                         <th>Sınıf Kodu</th>
@@ -62,6 +63,12 @@
                       <tr *ngFor="let car of carDetails">
                         <td>{{car.id}}</td>
                         <td><i *ngIf="car.isActive == true" class="fa fa-check"></i> <i *ngIf="car.isActive == false" class="fa fa-times" style="color:darkorange;"></i></td>
+                        <td>
+                          &nbsp;&nbsp;&nbsp; <i *ngIf="car.status == 1" style="color:#00bc8c;" class="fa fa-car" title="Boşta"></i> 
+                          <i *ngIf="car.status == 2" class="fa fa-car" style="color:#e74c3c;" title="Kirada"></i>
+                          <i *ngIf="car.status == 3" class="fa fa-exclamation-triangle" style="color:#f39c12;" title="2.Elde"></i>
+                          <i *ngIf="car.status == 4" class="fa fa-tools" style="color:#e74c3c;" title="Servis"></i>
+                        </td>
                         <td>{{car.plaque}}</td>
                         <td>{{car.branchName}}</td>
                         <td>{{car.classCode}}</td>

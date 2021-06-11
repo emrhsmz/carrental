@@ -69,7 +69,8 @@ export class CarAddFormComponent implements OnInit {
       body: ['', Validators.required],
       color: ['', Validators.required],
       engineCapacity: ['', Validators.required],
-      rateOfEngine: ['', Validators.required]
+      rateOfEngine: ['', Validators.required],
+      status: ['', Validators.required]
     });
   }
 

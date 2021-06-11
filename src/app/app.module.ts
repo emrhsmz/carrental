@@ -52,6 +52,9 @@ import { ClassEditFormComponent } from './components/pages/admin-dashboard-page/
 import { CarDasboardComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-dasboard.component';
 import { CarAddFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-add-form/car-add-form.component';
 import { CarEditFormComponent } from './components/pages/admin-dashboard-page/car-dasboard/car-edit-form/car-edit-form.component';
+import { ContractsDashboardComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contracts-dashboard.component';
+import { ContractAddFormComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contract-add-form/contract-add-form.component';
+import { ContractEditFormComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contract-edit-form/contract-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +101,9 @@ import { CarEditFormComponent } from './components/pages/admin-dashboard-page/ca
     CarDasboardComponent,
     CarAddFormComponent,
     CarEditFormComponent,
+    ContractsDashboardComponent,
+    ContractAddFormComponent,
+    ContractEditFormComponent,
   ],
   imports: [
     BrowserModule,

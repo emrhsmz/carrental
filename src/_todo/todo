@@ -11,6 +11,7 @@
     - - class crud @done
     - - classImage crud
     - - car crud @done
+    - - contract crud @done
     - - document crud
     - - driver crud
     - - seri crud
@@ -29,6 +30,7 @@
     - - class @done
     - - classImage
     - - car @done
+    - - contract @done
     - - document
     - - driver
     - - seri
@@ -47,6 +49,7 @@
     - - class @done
     - - classImage
     - - car @done
+    - - contract @done
     - - document
     - - driver
     - - seri

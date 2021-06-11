@@ -13,4 +13,5 @@ export interface CarDetail{
     color:number;
     kilometer:number;
     maxKilometer:number;
+    status:number;
 }

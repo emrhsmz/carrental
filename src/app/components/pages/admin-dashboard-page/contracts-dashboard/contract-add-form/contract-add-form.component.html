@@ -1,0 +1,158 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-9">
+          <h1 class="m-0">{{ title }}</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3">
+          <button routerLink="/admin/cars" class="btn btn-danger btn-block">Geri</button>
+          <ol class="breadcrumb float-sm-right"></ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">{{ title }} Ekle</h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form [formGroup]="contractAddForm">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Kontrat Numarası</label>
+                            <input formControlName="contractNo" type="text" class="form-control" id="contractNo" placeholder="Kontrat Numarası"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="name">Alış Tarihi</label>
+                            <input formControlName="purchaseDate" type="date" class="form-control" id="purchaseDate"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-3">
+                        <div class="form-group">
+                            <label for="name">Bırakış Tarihi</label>
+                            <input formControlName="dropOffDate" type="date" class="form-control" id="dropOffDate"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="name">Gün</label>
+                            <input formControlName="day" type="number" min="0" class="form-control" id="day" placeholder="Gün Sayısı"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="name">Günlük Kira</label>
+                            <input formControlName="unitPrice" type="number" min="0" class="form-control" id="unitPrice" placeholder="Günlük Kira Bedeli"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="name">Toplam Kira</label>
+                            <input formControlName="total" type="number" min="0" class="form-control" id="total" placeholder="Toplam Kira Bedeli"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Alış Yeri</label>
+                            <select class="form-control" id="pickUpPleace" aria-label="Floating label select " formControlName="pickUpPleace">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let branch of branches" value="{{ branch.id}}"> {{ branch.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Bırakış Yeri</label>
+                            <select class="form-control" id="dropOffPleace" aria-label="Floating label select " formControlName="dropOffPleace">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let branch of branches" value="{{ branch.id}}"> {{ branch.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Sınıf</label>
+                            <select class="form-control" id="classId" aria-label="Floating label select " formControlName="classId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let class of classes" value="{{ class.id }}"> {{ class.name }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Araç</label>
+                            <select class="form-control" id="carId" aria-label="Floating label select " formControlName="carId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let car of cars" value="{{ car.id}}"> {{ car.brandName }} {{ car.modelName }} -  {{ car.plaque }} </option>
+                            </select>
+                          </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Plaka</label>
+                            <input formControlName="plaque" type="text" class="form-control" id="plaque" placeholder="Plaka"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                       <div class="row">
+                           <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="name">Alış Depo</label>
+                                <input formControlName="gasTank" type="number" min="0" max="8" class="form-control" id="gasTank" placeholder="Depo"/>
+                            </div>
+                           </div>
+                           <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="name">&nbsp;</label>
+                                <input value="/ 8" class="form-control" disabled/>
+                            </div>
+                           </div>
+                       </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="name">Kilometre</label>
+                            <input formControlName="kilometer" type="number" min="0" class="form-control" id="kilometer"/>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                            <label>Müşteri</label>
+                            <select class="form-control" id="customerId" aria-label="Floating label select " formControlName="customerId">
+                              <option selected [ngValue]="null">Seçiniz.</option>
+                              <option *ngFor="let customer of customers" value="{{ customer.id }}"> {{ customer.fullName }} - {{ customer.tcNumber }} -  {{ customer.phone }} -  {{ customer.email }}  -  {{ customer.description }}  </option>
+                            </select>
+                          </div>
+                      </div>
+                  </div>
+                <!-- /.form-group -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+  </section>

@@ -17,6 +17,7 @@ export interface Car{
     modelId:number;
     seriId:number;
     fuel:number;
+    status:number;
     gear:number;
     body:number;
     color:number;

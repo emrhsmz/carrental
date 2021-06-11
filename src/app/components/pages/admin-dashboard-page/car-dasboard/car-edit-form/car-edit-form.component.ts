@@ -73,6 +73,7 @@ export class CarEditFormComponent implements OnInit {
       color: [this.car.color, Validators.required],
       engineCapacity: [this.car.engineCapacity, Validators.required],
       rateOfEngine: [this.car.rateOfEngine, Validators.required],
+      status: [this.car.status, Validators.required]
     });
   }
 
