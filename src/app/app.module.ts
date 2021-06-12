@@ -55,6 +55,12 @@ import { CarEditFormComponent } from './components/pages/admin-dashboard-page/ca
 import { ContractsDashboardComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contracts-dashboard.component';
 import { ContractAddFormComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contract-add-form/contract-add-form.component';
 import { ContractEditFormComponent } from './components/pages/admin-dashboard-page/contracts-dashboard/contract-edit-form/contract-edit-form.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+
+import { StoreModule } from '@ngrx/store';
+import { AppReducers } from './store/app.reducer';
+import { HttpErrorInterceptor } from 'src/interceptors/http-error.interceptor';
+import { AuthInterceptor } from 'src/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -104,6 +110,7 @@ import { ContractEditFormComponent } from './components/pages/admin-dashboard-pa
     ContractsDashboardComponent,
     ContractAddFormComponent,
     ContractEditFormComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,9 +121,13 @@ import { ContractEditFormComponent } from './components/pages/admin-dashboard-pa
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-right'
-    })
+    }),
+    StoreModule.forRoot(AppReducers),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
